@@ -18,9 +18,25 @@ public class ControllerClass {
 		System.out.println("I'm from controller class");
 		serviceClass.m1();
 	}
-	@GetMapping("/m2")
-	public void m2() {
-		System.out.println("I'm from m2 in controller class");
-	}
+	/**
+	***************************
+	APPLICATION FAILED TO START
+	***************************
 
+	Description:
+
+	The dependencies of some of the beans in the application context form a cycle:
+
+	┌─────┐
+	|  controllerClass (field private com.app.service.ServiceClass com.app.controller.ControllerClass.serviceClass)
+	↑     ↓
+	|  serviceClass (field private com.app.controller.ControllerClass com.app.service.ServiceClass.controllerClass)
+	└─────┘
+
+
+	Action:
+
+	Relying upon circular references is discouraged and they are prohibited by default. Update your application to remove the dependency cycle between beans. As a last resort, it may be possible to break the cycle automatically by setting spring.main.allow-circular-references to true.
+
+*/
 }
