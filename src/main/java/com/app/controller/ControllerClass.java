@@ -18,6 +18,18 @@ public class ControllerClass {
 		System.out.println("I'm from controller class");
 		serviceClass.m1();
 	}
+	
+	/**
+	 * CircularReferenceException *
+	 
+   This exception occurs when two or more beans depend on each other in a circular fashion, and Spring cannot resolve the circular dependency.
+   - **Cause**: Circular dependency between beans that cannot be resolved either through constructor injection or by Spring's automatic resolution mechanisms.
+   - **Example**:
+     java org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'myBean' defined in class path resource [applicationContext.xml]: Circular reference detected
+     
+     */
+	
+	
 	/**
 	***************************
 	APPLICATION FAILED TO START
